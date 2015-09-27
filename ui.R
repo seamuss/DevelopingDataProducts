@@ -7,29 +7,11 @@ library(shiny)
 shinyUI(
       navbarPage("Movies Budget and Ratings Investigation Tool",
             tabPanel("App",  
-                  sidebarPanel(
-                        h4("Investigate by Year and Genre"),
-                        sliderInput("year", 
-                                    "Year:", 
-                                    min = 1890, 
-                                    max = 2015, 
-                                    value = c(1800, 2015),
-                                    sep = ""),
-                        uiOutput("genres"),
-                        actionButton(inputId = "clearAll", 
-                                     label = "Clear selection", 
-                                     icon = icon("square-o")),
-                        actionButton(inputId = "selectAll", 
-                                     label = "Select all", 
-                                     icon = icon("check-square-o"))
-                  ),
-                  
-                    
                   mainPanel(  
                         tabsetPanel(
                            
                               # Data results somehow - something
-                              tabPanel("Results / Visualisations",                                        
+                              tabPanel("Visualisations",                                        
                                     plotOutput("ratingByBudget", width = "100%"),
                                     plotOutput("budgetByYear", width = "100%")
                                                                      
@@ -40,15 +22,30 @@ shinyUI(
                                     mainPanel(
                                           dataTableOutput("movies_data")
                                     )
+                              ),
+                              tabPanel("Documentation", 
+                                       mainPanel(
+                                         includeMarkdown("docs.md")
+                                       )
                               )
                         )    
                   )
             ),
-                 
-            tabPanel("Documentation", 
-                  mainPanel(
-                        includeMarkdown("docs.md")
-                  )
+            sidebarPanel(
+              h4("Investigate by Year and Genre"),
+              sliderInput("year", 
+                          "Year:", 
+                          min = 1890, 
+                          max = 2015, 
+                          value = c(1800, 2015),
+                          sep = ""),
+              uiOutput("genres"),
+              actionButton(inputId = "clearAll", 
+                           label = "Clear selection", 
+                           icon = icon("square-o")),
+              actionButton(inputId = "selectAll", 
+                           label = "Select all", 
+                           icon = icon("check-square-o"))
             )
       )
 )

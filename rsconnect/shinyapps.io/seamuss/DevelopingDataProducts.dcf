@@ -2,8 +2,8 @@ name: DevelopingDataProducts
 account: seamuss
 server: shinyapps.io
 appId: 62057
-bundleId: 275082
+bundleId: 275101
 url: https://seamuss.shinyapps.io/DevelopingDataProducts
-when: 1443359204.82443
+when: 1443360912.57212
 asMultiple: FALSE
 asStatic: FALSE
