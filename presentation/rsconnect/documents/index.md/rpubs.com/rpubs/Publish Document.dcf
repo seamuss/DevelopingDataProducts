@@ -1,0 +1,9 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+appId:
+        https://api.rpubs.com/api/v1/document/113221/b1aa8b015e704469805d60d436fd617f
+bundleId:
+        https://api.rpubs.com/api/v1/document/113221/b1aa8b015e704469805d60d436fd617f
+url: http://rpubs.com/seamuss/113221
+when: 1443364749.71462
